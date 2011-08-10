@@ -1,0 +1,15 @@
+2.0
+	- Added $.loadCSS() for loading CSS required by plugins. Update the plugin source to call it.
+	- Added $.loadScript() for loading regular scripts.
+	- Added $.loadLibs() for loading modularized libraries.
+	- Started tracking loaded elements in the jqLoaded global variable.
+	- Added the ability to allow the scripts to be cached by the browser or not.
+	- Created default parameters.
+	- Made sure that the current value of $.ajaxSettings.async is preserved regardless of the async parameter.
+
+1.5
+	- Added automatic plugin tracking by adding each loaded plugin to the jqPlugins global variable.
+	- Prevents loading the same plugin more than once.
+
+1.0
+	- Initial stable release

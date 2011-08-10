@@ -26,18 +26,21 @@
 	// The following three functions are wrappers for $.loadJS that set the default path if one is not supplied.
 	
 	$.loadPlugins = function(params) {
+		params = setParams(params);
 		// Configure the path
 		params.path = typeof params.path == 'undefined' ? jqDEFAULT_PLUGIN_PATH : params.path;
 		$.loadJS(params,'plugins');
 	};
 	
 	$.loadScripts = function(params) {
+		params = setParams(params);
 		// Configure the path
 		params.path = typeof params.path == 'undefined' ? jqDEFAULT_SCRIPT_PATH : params.path;
 		$.loadJS(params,'scripts');
 	};
 	
 	$.loadLibs = function(params) {
+		params = setParams(params);
 		// Configure the path
 		params.path = typeof params.path == 'undefined' ? jqDEFAULT_LIB_PATH : params.path;
 		$.loadJS(params,'libs');
@@ -45,7 +48,7 @@
 	
 	// This is where the magic happens.
 	$.loadJS = function(params,scriptType){
-
+		
 		// Capture the current async setting
 		var originalAsync = $.ajaxSettings.async;
 
@@ -76,7 +79,7 @@
 	};
 	
 	$.loadCSS = function(params) {
-		
+		params = setParams(params);
 		// Configure defaults
 		params.list = params.list instanceof Array === false ? [params.list] : params.list;
 		params.cache = typeof params.cache == 'undefined' ? jqDEFAULT_CACHE : params.cache;
@@ -111,4 +114,15 @@ function inArray(needle,haystack){
 		if(needle==haystack[i]){return true;}
 	}
 	return false;
+}
+
+// Backards compatibility for version <= 1.5
+function setParams(params){
+	var p = {};
+	if(params instanceof Object){
+		p = params;
+	} else {
+		p.list = params;
+	}
+	return p;
 }

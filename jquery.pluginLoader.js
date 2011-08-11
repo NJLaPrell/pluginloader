@@ -119,7 +119,7 @@ function inArray(needle,haystack){
 // Backards compatibility for version <= 1.5
 function setParams(params){
 	var p = {};
-	if(params instanceof Object && !params instanceof Array)
+	if((params instanceof Object) && (!params instanceof Array)){
 		p = params;
 	} else {
 		p.list = params;

@@ -65,7 +65,10 @@
 			// Only process plugins that have not already been added.
       		if(!inArray(params.list[i],jqLoaded[scriptType])){
 				// Build the plugin path.
-	        	var newScript = params.path + "jquery." + params.list[i] + ".js";
+	        	var newScript = params.path;
+				// Prepend "jquery" if it is a plugin.
+				newScript += scriptType == 'plugins' ? "jquery." : "";
+				newScript += params.list[i] + ".js";
 				// append a random query parameter if caching is off.
 				newScript += params.cache ? '' : "?" + Math.random();
 				// Fetch the script

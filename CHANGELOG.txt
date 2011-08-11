@@ -1,3 +1,8 @@
+2.0.01
+	- Updated to take a string or array in the $.load functions. This causes the Plugin Loader to use those values as the list and use predefined defaults for parameters (better backwards compatibility for calls for the older versions).
+	- Fixed a bug causing "jquery." to be prepended to all file names (https://github.com/NJLaPrell/pluginloader/issues/1)
+	- Fixed a bug causing the plugin list to be set to undefined if an array was passed (https://github.com/NJLaPrell/pluginloader/issues/2)
+
 2.0
 	- Added $.loadCSS() for loading CSS required by plugins. Update the plugin source to call it.
 	- Added $.loadScript() for loading regular scripts.

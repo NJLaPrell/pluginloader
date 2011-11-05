@@ -7,15 +7,15 @@
 (function($){
 	
 	// Define defaults
-	jqDEFAULT_PLUGIN_PATH = '/plugins/';
-	jqDEFAULT_SCRIPT_PATH = '';
-	jqDEFAULT_LIB_PATH = '/lib/';
-	jqDEFAULT_CSS_PATH = '/plugins/css/';
-	jqDEFAULT_CACHE = true;
-	jqDEFAULT_ASYNC = null;
+	var jqDEFAULT_PLUGIN_PATH = '/plugins/';
+	var jqDEFAULT_SCRIPT_PATH = '';
+	var jqDEFAULT_LIB_PATH = '/lib/';
+	var jqDEFAULT_CSS_PATH = '/plugins/css/';
+	var jqDEFAULT_CACHE = true;
+	var jqDEFAULT_ASYNC = null;
 
 	// Define which plugins are called
-	jqLoaded = {
+	var jqLoaded = {
 		plugins:['pluginLoader'],
 		scripts:[],
 		libs:[],

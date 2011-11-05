@@ -68,7 +68,8 @@
 	        	var newScript = params.path;
 				// Prepend "jquery" if it is a plugin.
 				newScript += scriptType == 'plugins' ? "jquery." : "";
-				newScript += params.list[i] + ".js";
+				newScript += params.list[i];
+				newScript += scriptType == 'plugins' ? ".js" : "";
 				// append a random query parameter if caching is off.
 				newScript += params.cache ? '' : "?" + Math.random();
 				// Fetch the script

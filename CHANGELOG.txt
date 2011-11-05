@@ -1,3 +1,6 @@
+2.0.02
+	- Fixed a bug causing .js to be appended to libs and scripts.
+	
 2.0.01
 	- Updated to take a string or array in the $.load functions. This causes the Plugin Loader to use those values as the list and use predefined defaults for parameters (better backwards compatibility for calls for the older versions).
 	- Fixed a bug causing "jquery." to be prepended to all file names (https://github.com/NJLaPrell/pluginloader/issues/1)
